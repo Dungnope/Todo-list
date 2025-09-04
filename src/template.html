@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo app</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="shortcut icon" href="./assets/Slime.png" type="image/x-icon" />
+    <script
+      src="https://kit.fontawesome.com/ece5143196.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!--Create Project modal-->
+    <dialog data-modal>
+      <form method="dialog">
+        <label for="todoTitle">Title</label>
+        <input
+          type="text"
+          name=""
+          id="todoTitle"
+          placeholder="e.g: Morning, Games, ..."
+        />
+        <button data-close-modal class="btn" type="submit">Create</button>
+      </form>
+    </dialog>
+
+    <!--Create list item for project-->
+    <dialog data-list-work>
+      <form method="dialog">
+        <label for="todo_Title_Item">Title</label>
+        <input
+          type="text"
+          name=""
+          id="todo_Title_Item"
+          placeholder="e.g: Related content"
+        />
+        <label for="todo_Description_Item">Description</label>
+        <textarea
+          type="text"
+          name="desc"
+          id="todo_Description_Item"
+          placeholder="e.g: Morning, Games, ..."
+        ></textarea>
+        <label for="todo_duo_date">Duo date</label>
+        <input type="date" id="todo_duo_date" name="duo__date" />
+        <label for="todo_priority">Priority</label>
+        <select name="priority" id="todo_priority">
+          <option value="high" class="choose">High</option>
+          <option value="medium" class="choose">Medium</option>
+          <option value="low" class="choose">Low</option>
+        </select>
+        <button data-close-list class="btn" type="submit">Create</button>
+      </form>
+    </dialog>
+    <div class="container">
+      <nav>
+        <ul class="navbar_list flex">
+          <li class="navbar_item flex">
+            <i class="fa-solid fa-bars"></i>
+            <span>Todo Lists</span>
+          </li>
+          <li class="navbar_item flex">
+            <i class="fa-solid fa-ellipsis"></i>
+            <img
+              src="./assets/Grass Block.png"
+              alt="avatar"
+              width="56px"
+              ,
+              height="56px"
+            />
+          </li>
+        </ul>
+      </nav>
+      <div class="wrapper flex">
+        <aside>
+          <button class="btn" data-open-modal>
+            <span>+</span>
+            <span>Create Project</span>
+          </button>
+          <div class="todo_title">
+            Projects list
+            <span></span>
+          </div>
+          <ul class="todo_projects flex">
+            <li class="todo_list flex">
+              <input type="checkbox" id="morning" />
+              <label for="morning">Morning</label>
+            </li>
+            <li class="todo_list flex">
+              <input type="checkbox" id="afternoon" />
+              <label for="afternoon">Afternoon</label>
+            </li>
+          </ul>
+        </aside>
+        <div class="todo_section flex">
+          <section class="todo_cards flex"></section>
+        </div>
+      </div>
+    </div>
+    <script src="./index.js" defer type="module"></script>
+  </body>
+</html>
