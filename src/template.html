@@ -18,7 +18,7 @@
         <label for="todoTitle">Title</label>
         <input
           type="text"
-          name=""
+          name="todoTitleProject"
           id="todoTitle"
           placeholder="e.g: Morning, Games, ..."
         />
@@ -26,34 +26,19 @@
       </form>
     </dialog>
 
-    <!--Create list item for project-->
-    <dialog data-list-work>
+    <!--Edit data-->
+    <dialog data-edit>
       <form method="dialog">
-        <label for="todo_Title_Item">Title</label>
-        <input
-          type="text"
-          name=""
-          id="todo_Title_Item"
-          placeholder="e.g: Related content"
-        />
-        <label for="todo_Description_Item">Description</label>
-        <textarea
-          type="text"
-          name="desc"
-          id="todo_Description_Item"
-          placeholder="e.g: Morning, Games, ..."
-        ></textarea>
-        <label for="todo_duo_date">Duo date</label>
-        <input type="date" id="todo_duo_date" name="duo__date" />
-        <label for="todo_priority">Priority</label>
-        <select name="priority" id="todo_priority">
-          <option value="high" class="choose">High</option>
-          <option value="medium" class="choose">Medium</option>
-          <option value="low" class="choose">Low</option>
-        </select>
-        <button data-close-list class="btn" type="submit">Create</button>
+        <label for="changeTitle">Title</label>
+        <input type="text" name="" id="changeTitle" />
+        <div class="flex" data-edit-box>
+          <button data-edit-modal class="btn" type="submit">Change</button>
+          <span>Discard</span>
+        </div>
       </form>
     </dialog>
+
+    <!--Create list item for project-->
     <div class="container">
       <nav>
         <ul class="navbar_list flex">
@@ -95,7 +80,9 @@
           </ul>
         </aside>
         <div class="todo_section flex">
-          <section class="todo_cards flex"></section>
+          <section class="todo_cards flex">
+            
+          </section>
         </div>
       </div>
     </div>

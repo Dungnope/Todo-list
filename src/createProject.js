@@ -1,6 +1,5 @@
 import { generateDataFromKey } from "./saveData.js";
 import { renderLocalStorage } from "./renderData.js";
-import { addWork } from "./addWorkList.js";
 const createProject = () => {
   const modal = document.querySelector("[data-modal]");
   const createModalBtn = document.querySelector("[data-close-modal]");
@@ -12,9 +11,8 @@ const createProject = () => {
 
   createModalBtn.addEventListener("click", (e) => {
     generateDataFromKey(todoTitle.value);
-    renderLocalStorage();
     todoTitle.value = "";
-    addWork();
+    renderLocalStorage();
     modal.close();
   });
 
@@ -26,6 +24,7 @@ const createProject = () => {
       e.clientY < dialogDimensions.top ||
       e.clientY > dialogDimensions.bottom
     ) {
+      todoTitle.value = "";
       modal.close();
     }
   });

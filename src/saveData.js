@@ -16,6 +16,9 @@ class todoItemData {
 }
 
 const generateDataFromKey = (titleValue) => {
+  if (titleValue === "" || titleValue === " ") {
+    titleValue = "No Title";
+  }
   const todoTitleStr = localStorage.getItem("todo");
   const newTodo = new todoData(titleValue);
   if (todoTitleStr) {
@@ -39,6 +42,27 @@ const generateDataOfItem = (
 ) => {
   const todoTitleStr = localStorage.getItem("todo");
   const currentTodo = JSON.parse(todoTitleStr);
+  if(title_data === ""){
+    title_data = "No Title";
+  }
+  if(description_data === ""){
+    description_data = "No description";
+  }
+  if(duo_data === ""){
+    const month = new Date().getMonth() + 1;
+    let monthLowerThanTen;
+    if(month < 10){
+      monthLowerThanTen = "0" + month;
+    }
+    const day = new Date().getDate();
+    const year = new Date().getFullYear();
+    if(month < 10){
+      duo_data = `${year}-${monthLowerThanTen}-${day}`;
+    }
+    else{
+      duo_data = `${year}-${month}-${day}`;
+    }
+  }
   const newDetailData = new todoItemData(
     title_data,
     description_data,

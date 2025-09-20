@@ -1,8 +1,8 @@
-import { createProject } from "./modules/CreateProject.js";
-import { renderLocalStorage } from "./modules/renderData.js";
-import { addWork } from "./modules/addWorkList.js";
+import { renderLocalStorage } from './renderData.js';
+import { createProject } from './createProject.js';
 const bar = document.querySelector(".navbar_item i");
 const aSide = document.querySelector("aside");
+const todoCard = document.querySelectorAll(".todo_cards .todo_card");
 //Show and hide sidebar
 bar.addEventListener("click", (e) => {
   if (aSide.style.display === "none") {
@@ -11,6 +11,6 @@ bar.addEventListener("click", (e) => {
     aSide.style.display = "none";
   }
 });
+
 renderLocalStorage();
 createProject();
-addWork();
