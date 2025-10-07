@@ -41,6 +41,11 @@ const loadList = () => {
         projectSide.removeAttribute("style");
     }
 
+    const getdata = localStorage.getItem("todo");
+    if(!getdata){
+        projectSide.style.display = "none";
+    }
+
 }
 
 export {asideList, loadList}
