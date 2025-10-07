@@ -19,7 +19,7 @@ const loadList = () => {
     const listItemArr = JSON.parse(listItem);
     const projectSide = document.querySelector(".todo_projects");
     projectSide.innerHTML = "";
-    if(listItem != ""){
+    if(listItem){
         listItemArr.forEach(item => {
             const listItemInfo = document.createElement("li");
             const listItemSpan = document.createElement("span");
@@ -34,7 +34,10 @@ const loadList = () => {
             projectSide.appendChild(listItemInfo);
         });
     }
-    if(projectSide.children.length === 0){
+
+    console.log(projectSide.innerHTML);
+
+    if(projectSide.innerHTML === ""){
         projectSide.style.display = "none";
     }
     else{

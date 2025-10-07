@@ -44,7 +44,8 @@ const renderLocalStorage = () => {
     ChangeNameCard();
     addWork();
     showOption();
-    loadList();
   }
+    loadList();
+
 };
 export { renderLocalStorage };
