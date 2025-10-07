@@ -45,7 +45,7 @@ const renderLocalStorage = () => {
     addWork();
     showOption();
   }
-    loadList();
+  loadList();
 
 };
 export { renderLocalStorage };

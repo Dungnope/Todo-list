@@ -286,6 +286,10 @@ section .todo_card .todo_card--title {
   gap: 24px;
 }
 
+.todo_edit .todo_trash--undeleted{
+  color: var(--black-200);
+}
+
 section .todo_card .add_work {
   padding: 8px 12px;
   position: relative;

@@ -35,9 +35,8 @@ const loadList = () => {
         });
     }
 
-    console.log(projectSide.innerHTML);
 
-    if(projectSide.innerHTML === ""){
+    if(projectSide.innerHTML === "" || projectSide.textContent === ""){
         projectSide.style.display = "none";
     }
     else{
