@@ -8,7 +8,7 @@ Keep track of tasks with custom project
     + Each project represent with card.
     + Cards can be deleted or renamed.
     + Tasks insiding cards can delete, change, stared.
-    + - [x] Check done tasks 
+    + ✅ Check done tasks 
     + Project list show the projects/card, can show or hide them.
     + Click on project show in the project list can navigate to it.
 
