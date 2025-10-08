@@ -3,10 +3,10 @@ import { renderLocalStorage } from "./renderData.js";
 const deleteCard = () => {
   const bicycleBtn = document.querySelectorAll(".todo_edit .todo_trash");
   const card = document.querySelectorAll(".todo_cards .todo_card");
-  bicycleBtn.forEach((btn, index) => {
+  bicycleBtn.forEach((btn) => {
     btn.addEventListener("click", (e) => {
       e.stopImmediatePropagation();
-      const cardName = card[index].firstChild.firstChild.textContent;
+      const cardName = e.currentTarget.parentNode.parentNode.parentNode.getAttribute("name-card");
       const Data = localStorage.getItem("todo");
       const todoCards = document.querySelector(".todo_section .todo_cards");
       const takeCardId = e.currentTarget.parentNode.parentNode.parentNode.getAttribute("id");
