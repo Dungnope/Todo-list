@@ -29,7 +29,6 @@ window.addEventListener("DOMContentLoaded", () => {
     })
   }
 })
-console.log(renderLocalStorage);
 renderLocalStorage();
 createProject();
 asideList();
