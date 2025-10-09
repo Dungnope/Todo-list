@@ -40,28 +40,27 @@ const generateDataOfItem = (
   duo_data,
   priority_data,
   card_idx,
-  card_ID
+  card_ID,
 ) => {
   const todoTitleStr = localStorage.getItem("todo");
   const currentTodo = JSON.parse(todoTitleStr);
-  if(title_data === ""){
+  if (title_data === "") {
     title_data = "No Title";
   }
-  if(description_data === ""){
+  if (description_data === "") {
     description_data = "No description";
   }
-  if(duo_data === ""){
+  if (duo_data === "") {
     const month = new Date().getMonth() + 1;
     let monthLowerThanTen;
-    if(month < 10){
+    if (month < 10) {
       monthLowerThanTen = "0" + month;
     }
     const day = new Date().getDate();
     const year = new Date().getFullYear();
-    if(month < 10){
+    if (month < 10) {
       duo_data = `${year}-${monthLowerThanTen}-${day}`;
-    }
-    else{
+    } else {
       duo_data = `${year}-${month}-${day}`;
     }
   }
@@ -69,22 +68,24 @@ const generateDataOfItem = (
     title_data,
     description_data,
     duo_data,
-    priority_data
+    priority_data,
   );
-  const todoItemStr = localStorage.getItem(`[${currentTodo[card_idx].name}, ${card_ID}]`);
+  const todoItemStr = localStorage.getItem(
+    `[${currentTodo[card_idx].name}, ${card_ID}]`,
+  );
   if (todoItemStr) {
     const currentItem = JSON.parse(todoItemStr);
     currentItem.push(newDetailData);
     localStorage.setItem(
       `[${currentTodo[card_idx].name}, ${card_ID}]`,
-      JSON.stringify(currentItem)
+      JSON.stringify(currentItem),
     );
   } else {
     currentTodo.forEach((element) => {
       if (currentTodo[card_idx].name === element.name) {
         localStorage.setItem(
           `[${currentTodo[card_idx].name}, ${card_ID}]`,
-          JSON.stringify([newDetailData])
+          JSON.stringify([newDetailData]),
         );
       }
     });

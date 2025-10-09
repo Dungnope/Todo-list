@@ -10,7 +10,7 @@ const addList = (indexNumber, take_detail) => {
   const todoCard = document.querySelectorAll(".todo_cards .todo_card");
   if (
     todoCard[indexNumber].lastElementChild.classList.contains(
-      "todo_description--empty"
+      "todo_description--empty",
     )
   ) {
     deleteEmptySection(indexNumber);
@@ -49,22 +49,20 @@ const takeListUI = (title, desc, duo, priority, completed, stared) => {
     title = "No title";
   }
   let checkStatus = [];
-  if(completed == false){
+  if (completed == false) {
     checkStatus[0] = "fa-regular fa-circle todo_check--none";
     checkStatus[1] = `style="text-decoration-line: "none"`;
     checkStatus[2] = `style="opacity:1"`;
-  }
-  else{
+  } else {
     checkStatus[0] = "fa-solid fa-circle-check todo_check--completed";
     checkStatus[1] = `style="text-decoration-line: line-through;"`;
     checkStatus[2] = `style="opacity:0.6"`;
   }
 
   let checkstar;
-  if(stared){
+  if (stared) {
     checkstar = "fa-solid fa-star todo_stared--solid";
-  }
-  else{
+  } else {
     checkstar = "fa-regular fa-star todo_stared--regular";
   }
 
@@ -92,7 +90,6 @@ const takeListUI = (title, desc, duo, priority, completed, stared) => {
   `;
 };
 
-
 const addResolve = () => {
   const titleInfo = document.querySelector("#todo_Title_Item");
   const descInfo = document.querySelector("#todo_Description_Item");
@@ -106,7 +103,7 @@ const addResolve = () => {
         descInfo.value,
         duoInfo.value,
         priorityInfo.value,
-        false
+        false,
       ),
       titleInfo.value,
       descInfo.value,
@@ -180,7 +177,7 @@ const addWork = () => {
                 val[3],
                 val[4],
                 newForm.getAttribute("takeindex"),
-                event.currentTarget.parentNode.parentNode.getAttribute("id")
+                event.currentTarget.parentNode.parentNode.getAttribute("id"),
               );
               titleInfo.value = "";
               descInfo.value = "";

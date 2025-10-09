@@ -6,10 +6,14 @@ const deleteCard = () => {
   bicycleBtn.forEach((btn) => {
     btn.addEventListener("click", (e) => {
       e.stopImmediatePropagation();
-      const cardName = e.currentTarget.parentNode.parentNode.parentNode.getAttribute("name-card");
+      const cardName =
+        e.currentTarget.parentNode.parentNode.parentNode.getAttribute(
+          "name-card",
+        );
       const Data = localStorage.getItem("todo");
       const todoCards = document.querySelector(".todo_section .todo_cards");
-      const takeCardId = e.currentTarget.parentNode.parentNode.parentNode.getAttribute("id");
+      const takeCardId =
+        e.currentTarget.parentNode.parentNode.parentNode.getAttribute("id");
       if (Data && todoCards.hasChildNodes()) {
         const dataArr = JSON.parse(Data);
         const filterList = dataArr.filter((value) => value.id !== takeCardId);
@@ -32,7 +36,8 @@ const ChangeNameCard = () => {
     button.addEventListener("click", (e) => {
       oldname = e.currentTarget.parentNode.previousSibling.textContent;
       renameForm.showModal();
-      cardID = renameBtn[idx].parentNode.parentNode.parentNode.getAttribute("id");
+      cardID =
+        renameBtn[idx].parentNode.parentNode.parentNode.getAttribute("id");
     });
   });
 

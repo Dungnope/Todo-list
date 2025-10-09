@@ -1,7 +1,7 @@
 import { addList, addWork, takeListUI } from "./addWorkList.js";
 import { createEmptyCard } from "./createEmptyCard.js";
 import { deleteCard, ChangeNameCard } from "./ModifiedCard.js";
-import { showOption} from "./ModifiledList.js";
+import { showOption } from "./ModifiledList.js";
 import { asideList, loadList } from "./asideProject.js";
 const renderLocalStorage = () => {
   const sidebarList = document.querySelector(".todo_projects");
@@ -30,8 +30,8 @@ const renderLocalStorage = () => {
                   value.duoDate,
                   value.priority,
                   value.completed,
-                  value.stared
-                )
+                  value.stared,
+                ),
               );
             });
           } else {
@@ -46,6 +46,5 @@ const renderLocalStorage = () => {
     showOption();
   }
   loadList();
-
 };
 export { renderLocalStorage };

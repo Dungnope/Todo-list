@@ -8,12 +8,12 @@ const createEmptyCard = (todoValue, todoId) => {
   <i class="fa-solid fa-pen-to-square todo_change" title = "rename"></i>
   </span>`;
 
-  if(todoId === "FiXEdCardUNChange213-23@1"){
+  if (todoId === "FiXEdCardUNChange213-23@1") {
     modifiedAndDelete = `<span class="flex todo_edit">
     <i class="fa-solid fa-trash todo_trash--undeleted" title = "Can not delete this card"></i>
     <i class="fa-solid fa-pen-to-square todo_change" title = "rename"></i>
     </span>
-    `
+    `;
   }
 
   const emptySection = `
