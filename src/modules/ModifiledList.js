@@ -124,6 +124,7 @@ const checkDone = (item, card_name, list_name, card_id) => {
       JSON.stringify(newDataArr),
     );
   }
+  renderLocalStorage();
 };
 
 const checkStared = (item, card_name, list_name, card_id) => {
@@ -214,26 +215,26 @@ const showOption = () => {
         //change title use blur event, the easy thing why I don't use this until do this function
         title.addEventListener("blur", (innerEvent) => {
           title.removeAttribute("contenteditable");
-          innerEvent.stopImmediatePropagation();
           const change_Title_Desc = new changeItem(
             card_name,
             old_list_title_name,
             title.textContent,
             desc.textContent,
           );
+          // innerEvent.stopImmediatePropagation();
           change_Title_Desc.changeTitle(old_list_title_name, card_id);
         });
         //change desc
         old_list_desc = desc.textContent;
         desc.addEventListener("blur", (innerEvent) => {
           desc.removeAttribute("contenteditable");
-          innerEvent.stopImmediatePropagation();
           const change_Title_Desc = new changeItem(
             card_name,
             old_list_title_name,
             title.textContent,
             desc.textContent,
           );
+          // innerEvent.stopImmediatePropagation();
           change_Title_Desc.changeDesc(old_list_desc, card_id);
         });
       }

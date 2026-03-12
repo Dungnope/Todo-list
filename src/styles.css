@@ -231,19 +231,29 @@ aside .todo_projects .todo_list {
   }
 }
 
-.aside__notcompleteList{
+.aside__statusList{
   position: absolute;
-  background-color: var(--accent-red);
   width: 20px;
   height: 20px;
   border-radius: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
-  right: 0;
+  right: -16px;
+  top: -4px;
   font: var(--sm);
   font-weight: 600;
+}
+
+.aside__statusList--notcomplete{
+  background-color: var(--accent-red);
   border: 2px solid var(--accent-red2);
+  color: var(--black-100);
+}
+
+.aside__statusList--complete{
+  background-color: var(--accent-green);
+  border: 2px solid var(--black-300);
   color: var(--black-100);
 }
 
