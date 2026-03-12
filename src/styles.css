@@ -20,6 +20,7 @@
   --black-300: hsla(0, 0%, 0%, 0.178);
   --black-bar: #d9d9d9;
   --accent-red: hsl(0, 100%, 58%);
+  --accent-red2: hsl(0, 100%, 30%);
   --accent-green: hsl(94, 89%, 32%);
   --accent-yellow-100: hsl(53, 100%, 56%);
   --accent-yellow-200: hsl(37, 100%, 61%);
@@ -140,6 +141,8 @@ aside {
   min-width: var(--sidebarwidth);
   height: 100%;
   flex: 1 0 300px;
+  display: block;
+  transition: display ease-in 0.2s;
 }
 
 .btn {
@@ -201,6 +204,7 @@ aside .todo_projects .todo_list {
   gap: 0 16px;
   border-radius: 20px;
   width: 100%;
+  position: relative;
   &:hover{
     transition: background-color ease-in-out 0.22s;
     background-color: var(--black-bar);
@@ -217,11 +221,32 @@ aside .todo_projects .todo_list {
     text-decoration: none;
     color: var(--black-100);
     transition: background-color ease-in-out 0.2s;
-  &:active{
-    background-color: var(--black-200);
-  }
+    &:active{
+      background-color: var(--black-200);
+    }
+
+    & span{
+      position: relative;
+    }
   }
 }
+
+.aside__notcompleteList{
+  position: absolute;
+  background-color: var(--accent-red);
+  width: 20px;
+  height: 20px;
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: 0;
+  font: var(--sm);
+  font-weight: 600;
+  border: 2px solid var(--accent-red2);
+  color: var(--black-100);
+}
+
 
 .todo_section {
   position: relative;
@@ -250,8 +275,7 @@ aside .todo_projects .todo_list {
   max-height: 600px;
   margin: 0 10px;
   flex: 1 1 100%;
-  max-width: 687px;
-  min-width: 360px;
+  width: min(360px, 687px);
   &:last-child {
     margin-right: 0;
   }
@@ -468,12 +492,15 @@ section .todo_description--empty {
 
 .todo_titlebar {
   justify-content: space-between;
+  align-items: center;
+  gap: 12px;
 }
 
 .todo_titlebar span:first-child {
   color: var(--blue-300);
   font: var(--xs);
   font-weight: 600;
+  word-break: break-all;
   &:focus {
     border: 1px solid var(--black-200);
   }
@@ -797,7 +824,6 @@ div[data-list-title-change]{
   justify-content: space-between;
 }
 
-data-btn-close--change
 
 #todo_duo_date--change{
   width: 100%;
@@ -805,4 +831,3 @@ data-btn-close--change
 #todo_priority--change{
   width: 100%;
 }
-
