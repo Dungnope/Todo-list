@@ -48,7 +48,8 @@ class changeItem {
     const cardListArr = JSON.parse(cardList);
     const modifiedListItem = cardListArr.filter((itemList) => {
       if (itemList.title === oldTitle) {
-        itemList.title = this.newinfo1;
+        if(this.newinfo1 === "") itemList.title = "No Title";
+        else itemList.title = this.newinfo1;
       }
       return itemList;
     });
@@ -63,7 +64,8 @@ class changeItem {
     const cardListArr = JSON.parse(cardList);
     const modifiedListItem = cardListArr.filter((itemList) => {
       if (itemList.description === oldDesc) {
-        itemList.description = this.newinfo2;
+        if(itemList.description === "") itemList.description = "No Title";
+        else itemList.description = this.newinfo2;
       }
       return itemList;
     });
